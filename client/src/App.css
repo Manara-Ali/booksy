@@ -1,0 +1,539 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  /* background-color: salmon; */
+}
+
+#main-container {
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100vw;
+}
+
+#nav {
+  border: 1px solid red;
+  background-color: #3d9363;
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem 0 3rem;
+  height: 9rem;
+}
+
+#nav-items {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  padding: 0.625rem;
+  margin-left: 0.625rem;
+  text-transform: uppercase;
+  font-size: 90%;
+  font-weight: 600;
+  position: relative;
+}
+
+li a,
+.new-book {
+  text-decoration: none;
+  color: #382110;
+  padding-bottom: 0.3125rem;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.2rem;
+  width: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+li a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.current {
+  border-bottom: 0.2rem solid #fff;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.profile-img:hover {
+  cursor: pointer;
+}
+
+#profile-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+#body-container {
+  border: 1px solid black;
+  grid-column: 1/-1;
+  height: 100%;
+}
+
+.header {
+  border: 1px solid yellow;
+  grid-column: 1/-1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-review-header {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  /* margin: 1.5rem 0 0.5rem; */
+}
+
+.book-review-header .add-book-btn {
+  width: 10rem;
+  margin-left: auto;
+  background-color: #3d9363;
+  border-radius: 0.7rem;
+}
+
+.new-book {
+  border: 1px solid black;
+  padding-left: 0.5rem;
+}
+
+.card-container {
+  border: 1px solid red;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 25rem);
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 22rem;
+  background-color: #f4f4f4;
+  border-radius: 1rem;
+  margin: 1rem 1rem;
+}
+
+.card-btn,
+.add-book-btn {
+  background-color: #3d9363;
+  border-radius: 0.7rem;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn-parent {
+  width: 10rem;
+}
+
+.back-btn {
+  width: 10rem;
+  background-color: #3d9363;
+  border-radius: 0.7rem;
+  margin: 1rem 4rem;
+}
+
+.add-book-btn {
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.new-book {
+  color: #fff !important;
+}
+
+.add-book-btn svg {
+  margin-right: 0.5rem;
+}
+
+.detail-container {
+  border: 2px solid black;
+  width: 70%;
+  margin: auto;
+}
+
+.image-list-container {
+  display: flex;
+  gap: 1rem;
+  width: 100vw;
+  background-color: salmon;
+  width: 100%;
+  justify-content: center;
+}
+
+.image-list-container img {
+  margin: 0;
+}
+
+.cover-image,
+.image-list {
+  width: 100%;
+  height: 35rem;
+  object-fit: contain;
+  margin: 2rem 0;
+}
+
+.image-list {
+  height: 20rem;
+  border: 2px solid blue;
+  width: auto;
+  margin: auto;
+  /* clip-path: circle();
+  object-fit: cover; */
+}
+
+.book-detail {
+  border: 2px solid red;
+  width: inherit;
+  margin: auto;
+  padding: 0 4.1rem;
+}
+
+.book-detail h1 {
+  text-align: center;
+}
+
+.book-detail p::first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3d9363;
+}
+
+.add-book-form,
+.delete-book-form,
+.login-form,
+.signup-form {
+  grid-row: 1/-1;
+  width: 50%;
+  margin: 5rem auto;
+}
+
+.add-book-form,
+.delete-book-form {
+  grid-column: 4/11;
+  grid-row: 2/12;
+  border: 1px solid #3d9363;
+  padding: 2rem;
+}
+
+.add-book-form h1,
+.add-book-form p,
+.delete-book-form h1,
+.delete-book-form p {
+  text-align: center;
+}
+
+.add-book-form .form-control,
+.delete-book-form .form-control {
+  outline: 1px solid #3d9363;
+  border-radius: 0.7rem;
+}
+
+.add-book-form .card-btn,
+.delete-book-form .card-btn {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.add-book-form .card-btn,
+.delete-book-form .card-btn {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.login-form {
+  grid-column: 4/11;
+  grid-row: 2/12;
+  border: 1px solid #3d9363;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-form h1,
+.account-form h1,
+.password-account-form h1 {
+  text-align: center;
+}
+
+.login-form .form-control {
+  outline: 1px solid #3d9363;
+  border-radius: 0.7rem;
+}
+
+.login-form .card-btn {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.login-form .card-btn {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.signup-form,
+.account-form {
+  grid-column: 4/11;
+  grid-row: 2/12;
+  border: 1px solid #3d9363;
+  padding: 2rem;
+}
+
+.signup-form h1 {
+  text-align: center;
+}
+
+.signup-form .form-control {
+  outline: 1px solid #3d9363;
+  border-radius: 0.7rem;
+}
+
+.signup-form .card-btn {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.account-form,
+.password-account-form {
+  width: 60%;
+  margin: 3rem auto;
+}
+
+.account-form .form-control {
+  outline: 1px solid #3d9363;
+  border-radius: 7px;
+  width: 50%;
+}
+
+.password-account-form .form-control {
+  outline: 1px solid #3d9363;
+  border-radius: 7px;
+  width: 50%;
+}
+
+.profile-user-img {
+  border: 1px solid red;
+  display: flex;
+  height: auto;
+  align-items: center;
+  width: 50%;
+}
+
+.profile-user-img img {
+  margin-right: 3rem;
+}
+
+#btn-profile,
+#btn-password {
+  width: 50%;
+  background-color: #3d9363;
+  border-radius: 0.7rem;
+  margin-top: 2rem !important;
+}
+
+.rating-value {
+  margin-left: 4px;
+}
+
+.button-option {
+  border: 2px solid blue;
+  width: 80%;
+  margin: 2rem auto 2rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-btn.delete,
+.card-btn.edit {
+  width: 10rem;
+}
+
+.card-btn.delete {
+  background-color: rgb(210, 53, 53);
+}
+
+.card-btn.edit:active,
+.card-btn.delete:active {
+  transform: translate(0.3rem, 0.3rem);
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 175vh;
+  z-index: 10;
+  border: 3px solid greenyellow;
+}
+
+.blur {
+  filter: blur(4px);
+}
+
+.modal-message {
+  border: 1px solid red;
+  width: 70%;
+  height: 175vh;
+  position: absolute;
+  background-color: rgba(170, 170, 170, 0.5);
+  border-radius: 7px;
+  top: 20%;
+  left: 15%;
+  text-align: center;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-message label {
+  color: rgb(33, 31, 31);
+  font-weight: bold;
+}
+
+.button-div {
+  display: flex;
+  border: 1px solid red;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-div .card-btn {
+  width: 10rem;
+  margin-top: 0.5rem;
+}
+
+.card-btn.cancel {
+  background-color: rgb(210, 53, 53);
+}
+
+.delete-book-form {
+  position: relative;
+  bottom: 30rem;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.delete-book-form h1 {
+  margin-bottom: 5rem;
+  margin-top: -2rem;
+}
+
+.delete-book-form p {
+  margin-bottom: 5rem;
+}
+
+.delete-book-form .card-btn.cancel {
+  background-color: #aaa;
+}
+
+.delete-title {
+  font-weight: bold;
+}
+
+#footer {
+  grid-column: 1/-1;
+  background-color: #eee8da;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* */
+
+/*
+
+
+.signup-form{
+  grid-column: 4/11;
+  grid-row: 2/12;
+  border: 1px solid #3d9363;
+  padding: 20px;
+}
+
+.signup-form h1{
+  text-align: center;
+}
+
+.signup-form .form-control{
+  outline: 1px solid #3d9363;
+  border-radius: 7px;
+}
+
+.signup-form .card-btn {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.error-container {
+  height: 50px;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  margin-top: -30px;
+  border: 1px solid green;
+}
+
+
+
+.column-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-container h1 {
+  font-size: 1.25rem;
+}
+
+.row-container {
+  grid-column: 1/-1;
+}
+
+
+.photo-input {
+  margin-left: 10px;
+  margin-right: 100px;
+}
+
+
+*/
